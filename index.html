@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Camera Stream & Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Username entry overlay screen -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Enter Username</h2>
+            <input type="text" id="username-input" placeholder="Your Display Name..." autocomplete="off" maxlength="15">
+            <br>
+            <button id="join-btn">Join Stream Feed</button>
+        </div>
+    </div>
+
+    <h1>Live Camera Feed & Global Chat</h1>
+    
+    <!-- Connection and user statistics counters -->
+    <div class="stats-row">
+        <div id="status" class="badge disconnected">Disconnected</div>
+        <div id="viewers-badge" class="badge">👥 0 Online</div>
+    </div>
+
+    <!-- Main split layout section -->
+    <div class="main-container">
+        <!-- Video Stream Player Viewport -->
+        <div class="stream-container">
+            <img id="camera-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Stream loading...">
+            <canvas id="overlay-canvas"></canvas>
+        </div>
+
+        <!-- Messaging Room Component -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <span>Live Room Chat</span>
+                <span id="my-username">Not Registered</span>
+            </div>
+            <div id="chat-messages">
+                <div class="message-system">Welcome to the room log!</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
